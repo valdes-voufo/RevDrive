@@ -3,9 +3,7 @@ package com.revDrive;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CarUtils {
 
@@ -32,8 +30,8 @@ public class CarUtils {
         return values;
     }
 
-    public static List<Car> getCarDirectory(String filename) {
-        ArrayList<Car> cars = new ArrayList<>();
+    public static Map<Integer,Car> getCarDirectory(String filename) {
+        Map<Integer,Car> cars = new HashMap<>();
 
         List<List<String>> records;
         try {
@@ -46,24 +44,24 @@ public class CarUtils {
             List<String> record = records.get(i);
             if (record.size() != 8) {
                 System.out.println("Wrong format of CSV.Should have 8 columns. Returning null");
-                return null;
+               continue;
             }
             // CarID,Make,Model,Year,Price,Type,BatteryRange,MPG
             if (record.get(i).equals("Electric")) {
-                cars.add(new ElectricCar(Integer.parseInt(record.get(0)),
+                cars.put(Integer.parseInt(record.get(0)), new ElectricCar(Integer.parseInt(record.get(0)),
                         record.get(1), record.get(2), Integer.parseInt(record.get(3)),
                         Float.parseFloat(record.get(4)), Integer.parseInt(record.get(6))));
             } else if (record.get(i).equals("Gasoline")) {
-                cars.add(new GasolineCar(Integer.parseInt(record.get(0)),
+                cars.put(Integer.parseInt(record.get(0)),new GasolineCar(Integer.parseInt(record.get(0)),
                         record.get(1), record.get(2), Integer.parseInt(record.get(3)),
                         Float.parseFloat(record.get(4)), Float.parseFloat(record.get(6))));
             } else if (record.get(i).equals("Hybrid")) {
-                cars.add(new HybridCar(Integer.parseInt(record.get(0)),
+                cars.put(Integer.parseInt(record.get(0)),new HybridCar(Integer.parseInt(record.get(0)),
                         record.get(1), record.get(2), Integer.parseInt(record.get(3)),
                         Float.parseFloat(record.get(4)), Integer.parseInt(record.get(6)),
                         Float.parseFloat(record.get(7))));
             } else if (record.get(i).equals("Car")) {
-                cars.add(new Car(Integer.parseInt(record.get(0)),
+                cars.put(Integer.parseInt(record.get(0)),new Car(Integer.parseInt(record.get(0)),
                         record.get(1), record.get(2), Integer.parseInt(record.get(3)),
                         Float.parseFloat(record.get(4))));
             } else {
@@ -74,6 +72,9 @@ public class CarUtils {
         return cars;
 
     }
+
+
+
 
 
 

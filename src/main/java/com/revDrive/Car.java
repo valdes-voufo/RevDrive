@@ -7,6 +7,11 @@ public  class Car {
     public int year;
     private float price;
 
+
+    public int getCar_id() {
+        return car_id;
+    }
+
     public Car(int car_id, String make, String model, int year, float price){
         this.car_id = car_id;
         this.make = make;
