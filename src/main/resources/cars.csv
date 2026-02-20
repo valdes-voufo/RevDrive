@@ -1,0 +1,17 @@
+CarID,Make,Model,Year,Price,Type,BatteryRange,MPG
+101,Tesla,Model 3,2023,39999,Electric,320,
+102,Toyota,Camry,2022,24999,Gasoline,,28
+103,Ford,Fusion Hybrid,2021,27999,Hybrid,25,40
+104,Chevrolet,Bolt,2023,31999,Electric,259,
+105,Honda,Accord,2022,25999,Gasoline,,30
+106,Hyundai,Ioniq,2023,26999,Hybrid,29,50
+107,BMW,i4,2024,55999,Electric,301,
+108,Audi,A6,2023,46999,Gasoline,,26
+109,Volkswagen,Passat GTE,2022,37999,Hybrid,34,45
+110,Mercedes-Benz,EQA,2024,47999,Electric,265,
+111,Porsche,Taycan,2023,89999,Electric,246,
+112,Opel,Astra,2022,22999,Gasoline,,32
+113,BMW,330e,2023,44999,Hybrid,22,37
+114,Audi,Q5 e-tron,2024,61999,Electric,280,
+115,Volkswagen,Golf,2023,23999,Gasoline,,33
+116,Mercedes-Benz,C300e,2023,52999,Hybrid,30,43
